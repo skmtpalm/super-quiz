@@ -1,7 +1,7 @@
 <template>
   <section class="hero is-primary">
     <div class="container">
-      <div class="hero-body">
+      <div class="hero-body has-text-centered">
         <h1 class="title">Super Quiz</h1>
       </div>
     </div>
