@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     handleCorrectAnswer(answer) {
-      if (answer === this.correnctAnswer) {
+      if (answer == this.correctAnswer) {
         console.log(answer + ' is Correnct!')
         this.$emit('correctAnswer', true)
       } else {
@@ -47,16 +47,18 @@ export default {
   computed: {
     answers() {
       let answersList = this.generateNumbers(this.min, this.max, this.answersCount)
+
       switch (this.quiz.operator) {
         case '+':
           this.correctAnswer = this.quiz.x + this.quiz.y
           answersList.push(this.correctAnswer)
           break
         case '-':
-          this.correnctAnswer = this.quiz.x - this.quiz.y
-          answersList.push(this.correnctAnswer)
+          this.correctAnswer = this.quiz.x - this.quiz.y
+          answersList.push(this.correctAnswer)
           break
       }
+
       return _.shuffle(answersList)
     }
   }

@@ -30,10 +30,7 @@ import AppHeader from './components/Header.vue'
 import QuizBoard from './components/QuizBoard.vue'
 import CorrectBoard from './components/CorrectBoard.vue'
 
-const operator = {
-  plus: '+',
-  minus: '-'
-}
+const operators = ['+', '-']
 
 export default {
   components: {
@@ -46,7 +43,7 @@ export default {
       quiz: {
         x: 12,
         y: 34,
-        operator: operator.minus
+        operator: operators[1]
       },
       isCorrect: false
     }
@@ -68,6 +65,7 @@ export default {
     updateQuiz() {
       this.quiz.x = Math.floor(Math.random() * 100)
       this.quiz.y = Math.floor(Math.random() * 100)
+      this.quiz.operator = operators[Math.floor(Math.random() * operators.length)]
     }
   }
 }
